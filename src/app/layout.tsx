@@ -1,9 +1,13 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import Layout from "@/components/main/Layout";
+// import font from '../../public/assets/fonts/woff/IRANSansX-Meduim.woff'
 
-const inter = Inter({ subsets: ["latin"] });
+const IranYekan = localFont({
+  src: "../../public/assets/fonts/woff/IRANSansX-Medium.woff",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +21,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-w-[1600px] h-full mx-auto">
-        <Navbar />
-        {children}
+      <body dir="rtl" className={`h-full ${IranYekan.className}`}>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

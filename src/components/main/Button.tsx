@@ -27,14 +27,14 @@ const Button = ({
     <button
       className={`flex items-center ${
         dir === "rtl" ? "flex-row" : "flex-row-reverse"
-      } ${width ? width : "w-full"} ${bg ? bg : "bg-primary"} ${
+      } ${width ? width : "w-full"} ${bg ? bg : "bg-primary-base"} ${
         color ? color : "text-white"
       } ${fontSize ? fontSize : "text-[16px]"} ${
         padding ? padding : "px-[12px] py-[10px]"
       } ${rounded ? rounded : "rounded-[4px]"}`}
     >
-      <p className={`${dir === "rtl" ? "mr-3" : "ml-3"}`}>{text}</p>
       {icon && icon}
+      <p className={`${dir === "rtl" ? "mr-3" : "ml-3"}`}>{text}</p>
     </button>
   );
 };

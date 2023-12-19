@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import Button from "./main/Button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,7 +7,7 @@ import IranLogo from "../../public/assets/images/iran-logo.png";
 
 const MenuItem = ({ text, href }: { text: string; href: string }) => {
   return (
-    <li className="flex px-6 py-4 text-black">
+    <li className="flex px-6 py-4 text-black font-[500]">
       <Link href={href}>{text}</Link>
     </li>
   );
@@ -15,44 +15,10 @@ const MenuItem = ({ text, href }: { text: string; href: string }) => {
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white rounded-md p-8 mt-10 border-b border-gray-100">
+    <nav className="w-full bg-white rounded-md py-8 mt-10 border-b border-gray-100">
       <div className="w-full flex justify-between items-center">
-        <ul className="flex items-center w-[50%]">
-          <li className="">
-            <Button
-              text="ورود به سامانه"
-              icon={
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.25 3C2.25 2.58579 2.58579 2.25 3 2.25H11.9958C12.4101 2.25 12.7458 2.58579 12.7458 3C12.7458 3.41421 12.4101 3.75 11.9958 3.75H3.75V20.25H12C12.4142 20.25 12.75 20.5858 12.75 21C12.75 21.4142 12.4142 21.75 12 21.75H3C2.58579 21.75 2.25 21.4142 2.25 21V3Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M13.0303 6.96967C13.3232 7.26256 13.3232 7.73744 13.0303 8.03033L9.06066 12L13.0303 15.9697C13.3232 16.2626 13.3232 16.7374 13.0303 17.0303C12.7374 17.3232 12.2626 17.3232 11.9697 17.0303L7.46967 12.5303C7.17678 12.2374 7.17678 11.7626 7.46967 11.4697L11.9697 6.96967C12.2626 6.67678 12.7374 6.67678 13.0303 6.96967Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M7.25 11.9958C7.25 11.5816 7.58579 11.2458 8 11.2458H21C21.4142 11.2458 21.75 11.5816 21.75 11.9958C21.75 12.4101 21.4142 12.7458 21 12.7458H8C7.58579 12.7458 7.25 12.4101 7.25 11.9958Z"
-                    fill="white"
-                  />
-                </svg>
-              }
-            />
-          </li>
-          <MenuItem text="قوانین و مقررات" href="/" />
-          <div className="border h-5 bg-gray-200" />
-          <MenuItem text="اخبار و اطلاعیه" href="/" />
-          <div className="border h-5 bg-gray-200" />
-          <MenuItem text="صفحه اصلی" href="/" />
-        </ul>
-        <div className="w-[50%] flex justify-end">
-          <div className="flex flex-row-reverse items-cetner">
+        <div className="w-[50%] flex justify-start">
+          <div className="flex items-cetner">
             <div>
               <svg
                 width="81"
@@ -118,7 +84,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className="flex items-center flex-col mr-2">
-              <div className="flex items-center">
+              <div className="flex flex-row-reverse items-center">
                 <div className="mr-2">
                   <Image width={33} height={33} src={IranLogo} alt="Iran" />
                 </div>
@@ -165,7 +131,7 @@ const Navbar = () => {
                   </svg>
                 </div>
               </div>
-              <div className="w-full flex justify-end mt-1">
+              <div className="w-full flex justify-start mt-1">
                 <svg
                   width="164"
                   height="22"
@@ -183,6 +149,40 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        <ul className="flex flex-row-reverse items-center w-[50%]">
+          <li className="">
+            <Button
+              text="ورود به سامانه"
+              icon={
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.25 3C2.25 2.58579 2.58579 2.25 3 2.25H11.9958C12.4101 2.25 12.7458 2.58579 12.7458 3C12.7458 3.41421 12.4101 3.75 11.9958 3.75H3.75V20.25H12C12.4142 20.25 12.75 20.5858 12.75 21C12.75 21.4142 12.4142 21.75 12 21.75H3C2.58579 21.75 2.25 21.4142 2.25 21V3Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M13.0303 6.96967C13.3232 7.26256 13.3232 7.73744 13.0303 8.03033L9.06066 12L13.0303 15.9697C13.3232 16.2626 13.3232 16.7374 13.0303 17.0303C12.7374 17.3232 12.2626 17.3232 11.9697 17.0303L7.46967 12.5303C7.17678 12.2374 7.17678 11.7626 7.46967 11.4697L11.9697 6.96967C12.2626 6.67678 12.7374 6.67678 13.0303 6.96967Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M7.25 11.9958C7.25 11.5816 7.58579 11.2458 8 11.2458H21C21.4142 11.2458 21.75 11.5816 21.75 11.9958C21.75 12.4101 21.4142 12.7458 21 12.7458H8C7.58579 12.7458 7.25 12.4101 7.25 11.9958Z"
+                    fill="white"
+                  />
+                </svg>
+              }
+            />
+          </li>
+          <MenuItem text="قوانین و مقررات" href="/" />
+          <div className="border h-5 bg-gray-200" />
+          <MenuItem text="اخبار و اطلاعیه" href="/" />
+          <div className="border h-5 bg-gray-200" />
+          <MenuItem text="صفحه اصلی" href="/" />
+        </ul>
       </div>
     </nav>
   );
