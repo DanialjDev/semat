@@ -25,14 +25,13 @@ const NewsContainer = ({ news }: { news: News[] }) => {
             <div className="flex items-center">
               <div className="w-[240px] mx-2">
                 <Input
-                  setValue={setSearchValue}
-                  value={searchValue}
                   name="search_post"
                   placeholder="متن مورد جستجو ..."
                   type="text"
                 />
               </div>
               <Button
+                width="w-fit"
                 text="جستجو"
                 bg="bg-transparent"
                 color="text-gray-700"

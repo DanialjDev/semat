@@ -49,7 +49,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`flex items-center ${
+      className={`flex items-center justify-center ${
         dir === "rtl" ? "flex-row" : "flex-row-reverse"
       } ${width ? width : "w-full"} ${bg ? bg : "bg-primary-base"} ${
         color ? color : "text-white"
@@ -58,7 +58,13 @@ const Button = ({
       } ${rounded ? rounded : "rounded-[4px]"} ${border ? border : ""}`}
     >
       {icon && icon}
-      <p className={`${dir === "rtl" ? "mr-3" : "ml-3"}`}>{text}</p>
+      <p
+        className={`${
+          icon ? `${dir === "rtl" ? "mr-3" : "ml-3"}` : "text-center"
+        }`}
+      >
+        {text}
+      </p>
     </button>
   );
 };
