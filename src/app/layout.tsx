@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Layout from "@/components/main/Layout";
+import Layout from "@/components/layout/Layout";
 // import font from '../../public/assets/fonts/woff/IRANSansX-Meduim.woff'
 
 const IranYekan = localFont({

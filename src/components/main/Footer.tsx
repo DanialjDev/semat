@@ -6,7 +6,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="w-full bg-gray-100 py-10 relative">
-      <div className="max-w-[1600px] 2xl:p-0 px-6 mx-auto flex justify-end items-center">
+      <div className="max-w-[1550px] xl:px-10 px-8 mx-auto flex justify-end items-center">
         <div className="w-[65%] flex items-center justify-between">
           <div className="flex flex-col items-center justify-between">
             <div className="scale-125">

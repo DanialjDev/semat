@@ -29,8 +29,12 @@ const config: Config = {
         300: "#A0A3A7",
         500: "#595A5D",
         600: "#38393B",
+        700: "#0C0C0C",
         cb: "#CBCBCB",
       },
+    },
+    boxShadow: {
+      inputShadow: "0px 1px 2px 0px #1018280D",
     },
   },
   plugins: [],

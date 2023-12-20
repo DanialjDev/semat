@@ -1,9 +1,9 @@
 import React from "react";
-import Button from "./main/Button";
+import Button from "./Button";
 import Link from "next/link";
 import Image from "next/image";
 
-import IranLogo from "../../public/assets/images/iran-logo.png";
+import IranLogo from "../../../public/assets/images/iran-logo.png";
 
 const MenuItem = ({ text, href }: { text: string; href: string }) => {
   return (
