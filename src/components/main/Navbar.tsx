@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Button from "./Button";
 import Link from "next/link";
 import Image from "next/image";
 
 import IranLogo from "../../../public/assets/images/iran-logo.png";
+import Login from "../Login";
+import CustomModal from "./CustomModal";
 
 const MenuItem = ({ text, href }: { text: string; href: string }) => {
   return (
@@ -14,8 +18,10 @@ const MenuItem = ({ text, href }: { text: string; href: string }) => {
 };
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="w-full bg-white rounded-md py-8 mt-10 border-b border-gray-100">
+      <Login isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="w-full flex justify-between items-center">
         <div className="w-[50%] flex justify-start">
           <div className="flex items-cetner">
@@ -152,6 +158,9 @@ const Navbar = () => {
         <ul className="flex flex-row-reverse items-center w-[50%]">
           <li className="">
             <Button
+              onClick={() => {
+                setIsOpen(true);
+              }}
               text="ورود به سامانه"
               icon={
                 <svg

@@ -17,6 +17,7 @@ interface ButtonProps {
   border?: string;
   loading?: boolean;
   onClick?: () => void;
+  type?: "button" | "submit";
 }
 
 const Button = ({
@@ -32,6 +33,7 @@ const Button = ({
   border,
   loading,
   onClick,
+  type = "button",
 }: ButtonProps) => {
   if (loading) {
     return (
@@ -48,6 +50,7 @@ const Button = ({
   }
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`flex items-center justify-center ${
         dir === "rtl" ? "flex-row" : "flex-row-reverse"

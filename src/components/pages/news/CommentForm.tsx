@@ -6,7 +6,10 @@ import React from "react";
 
 const CommentForm = () => {
   return (
-    <form className="grid grid-cols-6 gap-6">
+    <form
+      className="grid grid-cols-6 gap-6"
+      onSubmit={(e) => e.preventDefault()}
+    >
       <div className="w-full col-span-6">
         <Input
           type="text"
@@ -34,7 +37,7 @@ const CommentForm = () => {
         />
       </div>
       <div className="col-span-2 self-end">
-        <Button text="ارسال" />
+        <Button text="ارسال" type="submit" />
       </div>
     </form>
   );
