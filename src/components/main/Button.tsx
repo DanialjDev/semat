@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { ReactNode } from "react";
 import { MoonLoader } from "react-spinners";
@@ -18,6 +19,7 @@ interface ButtonProps {
   loading?: boolean;
   onClick?: () => void;
   type?: "button" | "submit";
+  href?: string;
 }
 
 const Button = ({
@@ -34,6 +36,7 @@ const Button = ({
   loading,
   onClick,
   type = "button",
+  href,
 }: ButtonProps) => {
   if (loading) {
     return (
@@ -49,26 +52,50 @@ const Button = ({
     );
   }
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      className={`flex items-center justify-center ${
-        dir === "rtl" ? "flex-row" : "flex-row-reverse"
-      } ${width ? width : "w-full"} ${bg ? bg : "bg-primary-base"} ${
-        color ? color : "text-white"
-      } ${fontSize ? fontSize : "text-[16px]"} ${
-        padding ? padding : "px-[12px] py-[10px]"
-      } ${rounded ? rounded : "rounded-[4px]"} ${border ? border : ""}`}
-    >
-      {icon && icon}
-      <p
-        className={`${
-          icon ? `${dir === "rtl" ? "mr-3" : "ml-3"}` : "text-center"
-        }`}
-      >
-        {text}
-      </p>
-    </button>
+    <>
+      {href ? (
+        <Link
+          href={href}
+          className={`flex items-center justify-center ${
+            dir === "rtl" ? "flex-row" : "flex-row-reverse"
+          } ${width ? width : "w-full"} ${bg ? bg : "bg-primary-base"} ${
+            color ? color : "text-white"
+          } ${fontSize ? fontSize : "text-[16px]"} ${
+            padding ? padding : "px-[12px] py-[10px]"
+          } ${rounded ? rounded : "rounded-[4px]"} ${border ? border : ""}`}
+        >
+          {icon && icon}
+          <p
+            className={`${
+              icon ? `${dir === "rtl" ? "mr-3" : "ml-3"}` : "text-center"
+            }`}
+          >
+            {text}
+          </p>
+        </Link>
+      ) : (
+        <button
+          type={type}
+          onClick={onClick}
+          className={`flex items-center justify-center ${
+            dir === "rtl" ? "flex-row" : "flex-row-reverse"
+          } ${width ? width : "w-full"} ${bg ? bg : "bg-primary-base"} ${
+            color ? color : "text-white"
+          } ${fontSize ? fontSize : "text-[16px]"} ${
+            padding ? padding : "px-[12px] py-[10px]"
+          } ${rounded ? rounded : "rounded-[4px]"} ${border ? border : ""}`}
+        >
+          {icon && icon}
+          <p
+            className={`${
+              icon ? `${dir === "rtl" ? "mr-3" : "ml-3"}` : "text-center"
+            }`}
+          >
+            {text}
+          </p>
+        </button>
+      )}
+    </>
   );
 };
 

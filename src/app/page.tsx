@@ -137,6 +137,7 @@ export default function Home() {
                       اخرین اخبار و اطلاعیه ها
                     </p>
                     <Button
+                      href="/news"
                       text=" آرشیو اخبار"
                       icon={
                         <svg

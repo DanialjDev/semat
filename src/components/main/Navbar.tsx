@@ -20,7 +20,7 @@ const MenuItem = ({ text, href }: { text: string; href: string }) => {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="w-full bg-white rounded-md py-8 mt-10 border-b border-gray-100">
+    <nav className="w-full bg-white rounded-md py-8 px-4 mt-10 border-b border-gray-100">
       <Login isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="w-full flex justify-between items-center">
         <div className="w-[50%] flex justify-start">
@@ -158,9 +158,7 @@ const Navbar = () => {
         <ul className="flex flex-row-reverse items-center w-[50%]">
           <li className="">
             <Button
-              onClick={() => {
-                setIsOpen(true);
-              }}
+              href="/login"
               text="ورود به سامانه"
               icon={
                 <svg
